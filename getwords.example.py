@@ -36,7 +36,7 @@ for page in range (1, total_pages + 1):
 
 print(words)
 
-wordlist = open(FILENAME,"w")
+wordlist = open("wordlists/"+FILENAME,"w")
 for word in words:
     wordlist.write(word + "\n")
 wordlist.close()

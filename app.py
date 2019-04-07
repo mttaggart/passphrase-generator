@@ -3,6 +3,10 @@ from pw import generate_password, password_list
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/api")
 def api_options():
     return "/api/pw\n/api/pwlist"
