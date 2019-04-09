@@ -26,5 +26,5 @@ def generate_password(sep=" ", digit_min=10, digit_max=99):
 def password_list(n, sep=" ", digit_min=10, digit_max=99):
     pws = []
     for i in range(n):
-        pws.append(generate_password(sep=sep, digit_min=digit_min, digit_max=digit_max))
+        pws.append(generate_password(sep, digit_min, digit_max))
     return pws
