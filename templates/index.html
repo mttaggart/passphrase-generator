@@ -7,7 +7,54 @@
         <h1>Passphrasify</h1>
         <h2>A better way to password</h2>
         <p>
-            Hello!
+            Passwords shouldn't be hard. And in fact, we've done 
+            a great job making passwords harder than they need 
+            to be.
         </p>
+        <p>The answer? Passphrases</p>
+        <p>
+            A slightly longer, but easier-to-remember passphrase
+            is actually <a href="https://xkcd.com/936/">more secure</a> 
+            than 8 characters of the usual password gibberish.
+        </p>
+        <p>
+            So, we're gonna help you out.
+        </p>
+        <form id="pw-form" method="POST" action="/">
+            <label for="sep">Separator</label>
+            <input type="text" name="sep" value="_" placeholder="_"/>
+            <label for="digit-min">
+                Minimum Digit
+            </label>
+            <input type="number" name="digit-min" value="10" placeholder="10"/>
+            <label for="digit-max">
+                    Maximum Digit
+                </label>
+                <input type="number" name="digit-max" value="99" placeholder="99"/>
+            <button type="submit">
+                Get a Passphrase!
+            </button>
+        </form>
+        <div id="passphrase-result">
+            {% if pw %}
+                <p><code>{{ pw }}</code></p>
+            {% endif %}
+        </div>
+        <h2>What's with these passphrases?</h2>
+        <p>
+            Glad you asked. 
+        </p>
+        <p>
+            These passphrases are made of curated wordlists. 
+            A 2-syllable adjective + a 2-syllable noun. Why 
+            2 syllables? Easy enough for young students
+            to remember.
+        </p>
+        <h2>Want more complex passphrases?</h2>
+        <p>
+            You can make your own generator!
+        </p>
+        <h2>Want more passphrases quick?</h2>
+        <p>Use the <a href="/api">API!</a></p>
     </body>
 </html>
