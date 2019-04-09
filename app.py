@@ -3,8 +3,15 @@ from pw import generate_password, password_list
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET","POST"])
 def index():
+    if request.method == "POST":
+        sep = request.form["sep"]
+        digit_min = int(request.form["digit-min"])
+        digit_max = int(request.form["digit-max"])
+        pw = generate_password(sep, digit_min, digit_max)
+        return render_template("index.html", pw=pw)
+        
     return render_template("index.html")
 
 @app.route("/api")
