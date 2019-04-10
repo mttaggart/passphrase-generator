@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
         <title>Passphrasify</title>
     </head>
     <body>
@@ -11,7 +12,7 @@
             a great job making passwords harder than they need 
             to be.
         </p>
-        <p>The answer? Passphrases</p>
+        <p>The answer? Passphrases.</p>
         <p>
             A slightly longer, but easier-to-remember passphrase
             is actually <a href="https://xkcd.com/936/">more secure</a> 
@@ -21,16 +22,22 @@
             So, we're gonna help you out.
         </p>
         <form id="pw-form" method="POST" action="/">
-            <label for="sep">Separator</label>
-            <input type="text" name="sep" value="_" placeholder="_"/>
-            <label for="digit-min">
-                Minimum Digit
-            </label>
-            <input type="number" name="digit-min" value="10" placeholder="10"/>
-            <label for="digit-max">
-                    Maximum Digit
+            <div class="form-item">
+                <label for="sep">Separator</label>
+                <input type="text" name="sep" value="_" placeholder="_"/>
+                <div class="form-item">
+                    <label for="digit-min">
+                        Minimum Digit
+                    </label>
+                    <input type="number" name="digit-min" value="10" placeholder="10"/>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="digit-max">
+                        Maximum Digit
                 </label>
                 <input type="number" name="digit-max" value="99" placeholder="99"/>
+            </div>
             <button type="submit">
                 Get a Passphrase!
             </button>
@@ -54,7 +61,7 @@
         <p>
             You can make your own generator!
         </p>
-        <h2>Want more passphrases quick?</h2>
+        <h2>Want more passphrases quickly?</h2>
         <p>Use the <a href="/api">API!</a></p>
     </body>
 </html>
