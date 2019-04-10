@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/static/main.css">
-        <title>Passphrasify</title>
-    </head>
+    {% include "header.html" %}
     <body>
         <h1>Passphrasify</h1>
         <h2>A better way to password</h2>
@@ -21,7 +18,12 @@
         <p>
             So, we're gonna help you out.
         </p>
-        <form id="pw-form" method="POST" action="/">
+        <div id="passphrase-result" class="code">
+            {% if pw %}
+                <p><code>{{ pw }}</code></p>
+            {% endif %}
+        </div>
+        <form id="pw-form" method="POST" action="/#passphrase-result">
             <div class="form-item">
                 <label for="sep">Separator</label>
                 <input type="text" name="sep" value="_" placeholder="_"/>
@@ -39,14 +41,9 @@
                 <input type="number" name="digit-max" value="99" placeholder="99"/>
             </div>
             <button type="submit">
-                Get a Passphrase!
+                Get a New Passphrase!
             </button>
         </form>
-        <div id="passphrase-result">
-            {% if pw %}
-                <p><code>{{ pw }}</code></p>
-            {% endif %}
-        </div>
         <h2>What's with these passphrases?</h2>
         <p>
             Glad you asked. 
@@ -57,11 +54,15 @@
             2 syllables? Easy enough for young students
             to remember.
         </p>
-        <h2>Want more complex passphrases?</h2>
-        <p>
-            You can make your own generator!
-        </p>
         <h2>Want more passphrases quickly?</h2>
         <p>Use the <a href="/api">API!</a></p>
+        <h2>Want more complex passphrases?</h2>
+        <p>
+            You can 
+            <a href="https://github.com/mttaggart/passphrase-generator">
+                make your own generator!
+            </a>
+        </p>
+        {% include "footer.html" %}
     </body>
 </html>
