@@ -11,8 +11,8 @@ def index():
         digit_max = int(request.form["digit-max"])
         pw = generate_password(sep, digit_min, digit_max)
         return render_template("index.html", pw=pw)
-        
-    return render_template("index.html")
+    pw = generate_password()
+    return render_template("index.html", pw=pw)
 
 @app.route("/api")
 def api_options():
