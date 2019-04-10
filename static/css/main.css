@@ -20,6 +20,7 @@ button {
     background: #6ECFA8;
     color: #F7E9E8;
     font-size: 24px;
+    font-weight: bolder;
     border: none;
     padding: 3px;
     transition: background, color .3s;
