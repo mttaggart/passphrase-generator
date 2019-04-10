@@ -15,11 +15,12 @@ def load_list(word_file, word_list):
 load_list(NOUNFILE, nouns)
 load_list(ADJFILE, adjectives)
 
-def generate_password(sep=" ", digit_min=10, digit_max=99):
-    return "{}{}{}_{}".format(
+def generate_password(sep="_", digit_min=10, digit_max=99):
+    return "{}{}{}{}{}".format(
         choice(adjectives),
         sep,
         choice(nouns),
+        sep,
         randint(digit_min,digit_max)
     )
 
