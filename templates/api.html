@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        <title>Passphrasify</title>
+    </head>
+    <body>
+        <h1>Passphrasify API</h1>
+        <p>
+            We maintain an API endpoint for generating multiple 
+            passphrases. Need enough for all your students?
+        </p>
+        <p>
+            No problem.
+        </p>
+        <div class="code">
+            <code>
+                https://passphrase.taggart-tech.com/api/pwlist?n={{ n }}&sep={{ sep }}&digitMin={{ digit_min }}&digitMax={{ digit_max }}
+            </code>
+        </div>
+        <h2>Parameters</h2>
+        <p><code>n</code>: Number of passphrases (limit 100)</p>
+        <p><code>sep</code>: Separator between sections</p>
+        <p><code>digitMin</code>: Minimum random digit</p>
+        <p><code>digitMax</code>: Maximum random digit</p>
+        <p>We rate-limit API requests to 1 per minute for load purposes. It's free, after all!</p>
+        {% include "footer.html" %}
+    </body>
+</html>
