@@ -3,3 +3,4 @@ getwords.py
 __pycache__/
 env/
 *.pyc
+*.swp
